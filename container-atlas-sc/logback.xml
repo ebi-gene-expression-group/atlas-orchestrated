@@ -1,0 +1,25 @@
+<configuration debug="true">
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.base}/logs/gxasc.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/gxasc/gxasc_%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+            <immediateFlush>true</immediateFlush>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <logger name="uk.ac.ebi.atlas" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+</configuration>

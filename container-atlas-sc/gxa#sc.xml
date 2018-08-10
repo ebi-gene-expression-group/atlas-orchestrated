@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/gxa/sc" swallowOutput="true">
+	<Loader className="org.apache.catalina.loader.VirtualWebappLoader" virtualClasspath="/etc/atlas-sc-config/"/>
+    <Parameter name="contextConfigLocation" value="classpath:applicationContext.xml" override="false"/>
+</Context>
